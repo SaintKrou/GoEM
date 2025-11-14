@@ -1,0 +1,21 @@
+# Бинарники и временные файлы Go
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Локальные настройки GoLand
+.idea/
+
+# Модули и кэш
+go.work
+go.work.sum
+
+# Логи, дампы
+*.log
+*.dmp
+
+# ОС
+.DS_Store
+Thumbs.db

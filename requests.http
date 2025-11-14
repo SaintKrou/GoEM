@@ -1,0 +1,43 @@
+### Создание подписки
+POST http://localhost:8080/subscriptions
+Content-Type: application/json
+
+{
+  "service_name": "Yandex Plus",
+  "price": 400,
+  "user_id": "60601fee-2bf1-4721-ae6f-7636e79a0cba",
+  "start_date": "07-2025"
+}
+
+### Получение по ID
+GET http://localhost:8080/subscriptions/ee3d773a-56e1-4a30-87fa-d0e36e5b9df8
+
+### Список всех подписок
+GET http://localhost:8080/subscriptions
+
+### Список с фильтрацией по user_id
+GET http://localhost:8080/subscriptions?user_id=60601fee-2bf1-4721-ae6f-7636e79a0cba
+
+### Список с фильтрацией по сервису
+GET http://localhost:8080/subscriptions?service_name=Yandex%20Plus
+
+### Агрегация: сумма за период
+GET http://localhost:8080/subscriptions/total?start_month=01-2025&end_month=12-2025
+
+### Агрегация с фильтрацией по пользователю
+GET http://localhost:8080/subscriptions/total?start_month=01-2025&end_month=12-2025&user_id=60601fee-2bf1-4721-ae6f-7636e79a0cba
+
+### Обновление подписки
+PUT http://localhost:8080/subscriptions/ee3d773a-56e1-4a30-87fa-d0e36e5b9df8
+Content-Type: application/json
+
+{
+  "service_name": "Yandex Plus Pro",
+  "price": 500,
+  "user_id": "60601fee-2bf1-4721-ae6f-7636e79a0cba",
+  "start_date": "07-2025",
+  "end_date": "12-2025"
+}
+
+### Удаление подписки
+DELETE http://localhost:8080/subscriptions/ee3d773a-56e1-4a30-87fa-d0e36e5b9df8
